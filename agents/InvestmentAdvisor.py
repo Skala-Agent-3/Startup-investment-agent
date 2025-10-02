@@ -6,7 +6,6 @@ from typing import Annotated, Sequence, TypedDict, List
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from pathlib import Path
 from prompts.investment_advisor import INVESTMENT_ADVISOR_USER_TEMPLATE, INVESTMENT_ADVISOR_SYSTEM_TEMPLATE
 
 import logging

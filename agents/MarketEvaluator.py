@@ -185,13 +185,3 @@ def MarketEvaluator(state: GraphState) -> GraphState:
     print("MarketEvaluator state snapshot")
     print(state)
     return state
-
-# Optional: standalone execution for quick manual testing
-# if __name__ == "__main__":
-#     sample_state: GraphState = {}
-#     out_state = MarketEvaluator(sample_state)
-#     print("\n===== MarketEvaluator Output =====")
-#     print(out_state.get("MarketEvaluator", "")[:1200])
-#     print("\n===== Search Context (head) =====")
-#     print(out_state.get("search_context", "")[:1200])
-
