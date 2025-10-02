@@ -47,7 +47,7 @@
   - 모든 응답이 신뢰 가능한 인용 근거를 포함
 
 - **Agentic Workflow Integration**
-  - (QueryParser → TechScribe → MarketEvaluator → CompetitorAnalyzer → InvestmentAdvisor → ReportGenerator)
+  - Orchestrator → TechScribe → MarketEvaluator → CompetitorAnalyzer → InvestmentAdvisor → ReportGenerator
   - Retrieval·Reranking 전략으로 확보한 맥락을 기반으로 에이전트별 전문 분석 수행
 
 ---
@@ -68,7 +68,7 @@
 
 | Agents                                    | 설명                                                                                                             |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| QueryParser(쿼리 파서 에이전트)           | 질의에서 관련 기업명을 감지하고 그래프 상태를 초기화                                                             |
+| Orchestrator(오케스트레이터 에이전트)     | 질의에서 관련 기업명을 감지하고 그래프 상태를 초기화                                                             |
 | TechScribe (기술 요약 에이전트)           | 9개 분석 항목별로 출처 인용이 보장된 RAG 기반 심층 분석 수행, 헬스케어 기업 보고서로부터 후보 스타트업 정보 추출 |
 | MarketEvaluator (시장성 평가 에이전트)    | 실시간 웹 검색 및 시장 동향 요약, 헬스케어 산업의 최근 트렌드 반영                                               |
 | CompetitorAnalyzer (경쟁사 분석 에이전트) | TechScribe 결과를 바탕으로 경쟁 구도 분석 (SWOT, KSF, Porter’s 5 Forces 등)                                      |
@@ -122,7 +122,7 @@
 │   ├── MarketEvaluator.py
 │   ├── ReportGenerator.py
 │   ├── TechScribe.py
-│   ├── QueryParser.py
+│   └── Orchestrator.py
 ├── data/           # 투자 브리핑 PDF
 ├── outputs/        # 결과물 저장
 │   └── create_pdf.py
@@ -132,7 +132,7 @@
 │   ├── market_evaluator.py
 │   ├── report_generator.py
 │   ├── techscribe.py
-│   ├── queryparser.py
+│   └── orchestrator.py
 ├── rag/            # RAG 관련 모듈
 │   └── advanced_retriever.py
 ├── graph_state.py
@@ -160,6 +160,6 @@
 - 김정윤 : 보고서 생성 에이전트, 보고서 PDF 변환
 - 김채연 : 경쟁사 분석 에이전트, 서비스 구조 도식화
 - 신동연 : 시장성 평가 에이전트, 기술 요약 에이전트(State 출력, 임베딩 수정)
-- 원주혜 : Langgraph 기반 에이전트 통합, 쿼리 파서 에이전트
+- 원주혜 : Langgraph 기반 에이전트 통합, 오케스트레이터 에이전트
 - 전혜민 : 투자 판단 에이전트, RAG용 raw data 구득, RAG 전략 고도화
 - 정성희 : 기술요약 에이전트
